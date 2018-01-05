@@ -1,0 +1,67 @@
+﻿<section id="help-view" class="mainbar" data-ng-controller="help as vm">
+    <section class="matter">
+        <div data-ng-include="'/app/layout/topnav.html'"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Help</h2>
+                    <div class="row top-buffer">
+                        <div class="col-md-12">
+                            <uib-accordion close-others="true" class="col-md-12">
+                                <div uib-accordion-group class="panel-info" heading="Profile" is-open="vm.status.isFirstOpen">
+                                    <div>
+                                        <h4>How to edit my profile?</h4>
+                                        <p>Go to the profile page and click on the 'Edit' button. This will send you to the edit profile page. You only need to enter the information that you need to change and click save.</p>
+                                    </div>
+                                    <div>
+                                        <h4>How to change my password?</h4>
+                                        <p>Go to the profile page and click on the 'Edit' button. This will send you to the edit profile page. You only need to enter the old password and the new one and then click save.</p>
+                                    </div>
+                                    <div>
+                                        <h4>How to delete account?</h4>
+                                        <p>You can go to Messages and send a message to admin or send and email to zafigueroa2011@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div uib-accordion-group class="panel-info" heading="Dashboard" >
+                                    <div>
+                                        <h4>How to add a book, game, or movie?</h4>
+                                        <p>Click the plus sign on the dashboard or on the navigation bar select add item. A form to add an Item will appear. You only need to choose if it is a book, movie or game and fill the form.</p>
+                                    </div>
+                                    <div>
+                                        <h4>How to view an item?</h4>
+                                        <p>Click on the title of the item. This will open a popup window with the item information.</p>
+                                    </div>
+                                    <div>
+                                        <h4>How to delete an item?</h4>
+                                        <p>Click on the title of the item. This will open a popup window with the item information. Click on the delete button.</p>
+                                    </div>
+                                    <div>
+                                        <h4>How to view messages?</h4>
+                                        <p>Click on the envelope icon or on the navigation bar select Messages.</p>
+                                    </div>
+                                    <div>
+                                        <h4>How to logout?</h4>
+                                        <p>On the navigation bar click on logout.</p>
+                                    </div>
+                                </div>
+                                <div uib-accordion-group class="panel-info" heading="Messages">
+                                    <div>
+                                        <h4>Send message?</h4>
+                                        <p>Go to Messages and click on the send button. Select user, enter the text and click on send.</p>
+                                    </div>
+                                </div>
+                                <div uib-accordion-group class="panel-info" heading="Other">
+                                    <div>
+                                        <h4>Need help?</h4>
+                                        <p>Go to Messages and send a message to admin or send and email to zafigueroa2011@gmail.com</p>
+                                    </div>
+                                </div>
+                            </uib-accordion>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

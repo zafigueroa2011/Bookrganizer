@@ -1,0 +1,54 @@
+﻿<section id="messages-view" class="mainbar" data-ng-controller="messages as vm">
+    <section class="matter">
+        <div data-ng-include="'/app/layout/topnav.html'"></div>
+        <div class="container">
+            <div class="col-md-12">
+                <div ng-repeat="m in vm.messages">
+                    <div ng-if="m.class=='sender'" class="alert alert-sender">
+                        <b>{{m.text}}</b>
+
+                        <i>Posted by "{{m.fromUsername}}" on {{m.time | date: "MM/dd/yyyy h:mm a"}}</i>
+                    </div>
+                    <div ng-if="m.class=='receiver'" class="alert alert-receiver">
+                        <b>{{m.text}}</b>
+
+                        <i>Posted by "{{m.fromUsername}}" on {{m.time | date: "MM/dd/yyyy h:mm a"}}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" ng-show="!vm.sendMsg">
+                <button class="btn btn-default" ng-click="vm.post()"><i class="fa fa-send"></i></button>
+            </div>
+            <div class="col-md-12" ng-show="vm.sendMsg" style="background-color:azure;border: 5px dashed #7fa2eb;">
+                <form name="msgForm">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>To:</label>
+                            <div class="col-md-6" style="padding-left:0px">
+                                <select style="width:80%" ng-model="vm.tomsg" required>
+                                    <option value="" style="display:none">Select user</option>
+                                    <option ng-repeat="u in vm.users" value="{{u.id}}">{{u.username}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Message:</label>
+                            <div class="col-md-3" style="padding-left:0px">
+                                <textarea id="msg" class="form-control" ng-model="vm.msg" style="width: 100%;height: 100px;" placeholder="Enter message. Can't exceed 250 characters." maxlength="250" required />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row text-center">
+                    <div class="form-group">
+                        <button class="btn btn-info" ng-disabled="msgForm.$invalid" ng-click="vm.send()"><i class="fa fa-send-o"></i> Send</button>
+                        <button class="btn btn-danger" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</section>

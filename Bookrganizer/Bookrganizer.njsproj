@@ -1,0 +1,253 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>Bookrganizer</Name>
+    <RootNamespace>Bookrganizer</RootNamespace>
+    <NameOfLastUsedPublishProfile>aws</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>65086bd4-4d73-4ca8-970b-1988be265284</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>server.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="models\books.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\database.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\games.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\messages.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\movies.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\app\addItem\addItem.js" />
+    <Compile Include="public\app\admin\admin.js" />
+    <Compile Include="public\app\app.js" />
+    <Compile Include="public\app\book\book.js" />
+    <Compile Include="public\app\common\bootstrap\bootstrap.dialog.js" />
+    <Compile Include="public\app\common\common.js" />
+    <Compile Include="public\app\common\logger.js" />
+    <Compile Include="public\app\common\spinner.js" />
+    <Compile Include="public\app\config.exceptionHandler.js" />
+    <Compile Include="public\app\config.js" />
+    <Compile Include="public\app\config.route.js" />
+    <Compile Include="public\app\dashboard\dashboard.js" />
+    <Compile Include="public\app\game\game.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\app\help\help.js" />
+    <Compile Include="public\app\layout\shell.js" />
+    <Compile Include="public\app\layout\sidebar.js" />
+    <Compile Include="public\app\login\login.js" />
+    <Compile Include="public\app\logout\logout.js" />
+    <Compile Include="public\app\messages\messages.js" />
+    <Compile Include="public\app\movie\movie.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="public\app\profile\profile.js" />
+    <Compile Include="public\app\profile\profileEdit\profileEdit.js" />
+    <Compile Include="public\app\services\datacontext.js" />
+    <Compile Include="public\app\services\directives.js" />
+    <Compile Include="public\app\signUp\signUp.js" />
+    <Compile Include="public\scripts\angular-animate.js" />
+    <Compile Include="public\scripts\angular-animate.min.js" />
+    <Compile Include="public\scripts\angular-mocks.js" />
+    <Compile Include="public\scripts\angular-route.js" />
+    <Compile Include="public\scripts\angular-route.min.js" />
+    <Compile Include="public\scripts\angular-sanitize.js" />
+    <Compile Include="public\scripts\angular-sanitize.min.js" />
+    <Compile Include="public\scripts\angular-ui\ui-bootstrap-tpls.js" />
+    <Compile Include="public\scripts\angular-ui\ui-bootstrap-tpls.min.js" />
+    <Compile Include="public\scripts\angular-ui\ui-bootstrap.js" />
+    <Compile Include="public\scripts\angular-ui\ui-bootstrap.min.js" />
+    <Compile Include="public\scripts\angular.js" />
+    <Compile Include="public\scripts\angular.min.js" />
+    <Compile Include="public\scripts\bootstrap.js" />
+    <Compile Include="public\scripts\bootstrap.min.js" />
+    <Compile Include="models\profile.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\users.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="public\scripts\jquery-3.1.1.intellisense.js" />
+    <Compile Include="public\scripts\jquery-3.1.1.js" />
+    <Compile Include="public\scripts\jquery-3.1.1.min.js" />
+    <Compile Include="public\scripts\jquery-3.1.1.slim.js" />
+    <Compile Include="public\scripts\jquery-3.1.1.slim.min.js" />
+    <Compile Include="public\scripts\moment-with-locales.js" />
+    <Compile Include="public\scripts\moment-with-locales.min.js" />
+    <Compile Include="public\scripts\moment.js" />
+    <Compile Include="public\scripts\moment.min.js" />
+    <Compile Include="public\scripts\select.js" />
+    <Compile Include="public\scripts\select.min.js" />
+    <Compile Include="public\scripts\spin.js" />
+    <Compile Include="public\scripts\spin.min.js" />
+    <Compile Include="public\scripts\toastr.js" />
+    <Compile Include="public\scripts\toastr.min.js" />
+    <Compile Include="public\scripts\ui-bootstrap-tpls-0.10.0.js" />
+    <Compile Include="public\scripts\ui-bootstrap-tpls-0.10.0.min.js" />
+    <Compile Include="server.js" />
+    <Content Include="package.json" />
+    <Content Include="public\app\addItem\addItem.html" />
+    <Content Include="public\app\admin\admin.html" />
+    <Content Include="public\app\book\book.html" />
+    <Content Include="public\app\dashboard\dashboard.html" />
+    <Content Include="public\app\game\game.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\help\help.html" />
+    <Content Include="public\app\layout\shell.html" />
+    <Content Include="public\app\layout\sidebar.html" />
+    <Content Include="public\app\layout\topnav.html" />
+    <Content Include="public\app\layout\widgetheader.html" />
+    <Content Include="public\app\login\login.html" />
+    <Content Include="public\app\logout\logout.html" />
+    <Content Include="public\app\messages\messages.html" />
+    <Content Include="public\app\movie\movie.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="public\app\profile\profile.html" />
+    <Content Include="public\app\profile\profileEdit\profileEdit.html" />
+    <Content Include="public\app\signUp\signUp.html" />
+    <Content Include="public\Content\bootstrap-theme.css" />
+    <Content Include="public\Content\bootstrap-theme.css.map" />
+    <Content Include="public\Content\bootstrap-theme.min.css" />
+    <Content Include="public\Content\bootstrap-theme.min.css.map" />
+    <Content Include="public\Content\bootstrap.css" />
+    <Content Include="public\Content\bootstrap.css.map" />
+    <Content Include="public\Content\bootstrap.min.css" />
+    <Content Include="public\Content\bootstrap.min.css.map" />
+    <Content Include="public\Content\customtheme.css" />
+    <Content Include="public\Content\font-awesome.css" />
+    <Content Include="public\Content\font-awesome.min.css" />
+    <Content Include="public\Content\ie10mobile.css" />
+    <Content Include="public\Content\images\AngularJS-small.png" />
+    <Content Include="public\Content\images\book-icon.jpg" />
+    <Content Include="public\Content\images\breezelogo.png" />
+    <Content Include="public\Content\images\default-placeholder-300x300.png" />
+    <Content Include="public\Content\images\icon.png" />
+    <Content Include="public\Content\main.css" />
+    <Content Include="public\Content\select.css" />
+    <Content Include="public\Content\select.min.css" />
+    <Content Include="public\Content\select.min.css.map" />
+    <Content Include="public\Content\styles.css" />
+    <Content Include="public\Content\toastr.css" />
+    <Content Include="public\Content\toastr.less" />
+    <Content Include="public\Content\toastr.min.css" />
+    <Content Include="public\Content\toastr.scss" />
+    <Content Include="public\Content\ui-bootstrap-csp.css" />
+    <Content Include="public\fonts\fontawesome-webfont.eot" />
+    <Content Include="public\fonts\fontawesome-webfont.svg" />
+    <Content Include="public\fonts\fontawesome-webfont.ttf" />
+    <Content Include="public\fonts\fontawesome-webfont.woff" />
+    <Content Include="public\fonts\fontawesome-webfont.woff2" />
+    <Content Include="public\fonts\FontAwesome.otf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="public\index.html" />
+    <Content Include="public\scripts\angular-animate.min.js.map" />
+    <Content Include="public\scripts\angular-route.min.js.map" />
+    <Content Include="public\scripts\angular-sanitize.min.js.map" />
+    <Content Include="public\scripts\angular.min.js.map" />
+    <Content Include="public\scripts\jquery-3.1.1.min.map" />
+    <Content Include="public\scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="public\scripts\select.min.js.map" />
+    <Content Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models\" />
+    <Folder Include="public\" />
+    <Folder Include="public\app\" />
+    <Folder Include="public\app\addItem\" />
+    <Folder Include="public\app\admin\" />
+    <Folder Include="public\app\book\" />
+    <Folder Include="public\app\common\" />
+    <Folder Include="public\app\common\bootstrap\" />
+    <Folder Include="public\app\dashboard\" />
+    <Folder Include="public\app\help\" />
+    <Folder Include="public\app\layout\" />
+    <Folder Include="public\app\login\" />
+    <Folder Include="public\app\logout\" />
+    <Folder Include="public\app\messages\" />
+    <Folder Include="public\app\movie\" />
+    <Folder Include="public\app\game\" />
+    <Folder Include="public\app\profile\" />
+    <Folder Include="public\app\profile\profileEdit\" />
+    <Folder Include="public\app\services\" />
+    <Folder Include="public\app\signUp\" />
+    <Folder Include="public\Content\" />
+    <Folder Include="public\Content\images\" />
+    <Folder Include="public\fonts\" />
+    <Folder Include="public\scripts\" />
+    <Folder Include="public\scripts\angular-ui\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

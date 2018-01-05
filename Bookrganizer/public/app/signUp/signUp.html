@@ -1,0 +1,67 @@
+﻿<section id="signup-view" class="mainbar matter" data-ng-controller="signUp as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="col-md-10 text-center">
+                <div class="row">
+                    <img src="././Content/images/book-icon.jpg" class="icon" style="float:left" />
+                    <h1 style="float:left">Bookrganizer</h1>
+                </div>
+
+            </div>
+            <div class="col-md-10 text-center" style="padding-top:30px">
+                <h2>Create Account</h2>
+                <form name="signUpForm" class="form-inline">
+                    <div>
+                        <h4 class="text-left">Personal Information:</h4>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">First Name: </label>
+                                <input type="text" class="form-control" placeholder="Please enter your firstname" ng-model="vm.firstname" required />                                
+                            </div>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">Last Name: </label>
+                                <input type="text" class="form-control" placeholder="Please enter your lastname" ng-model="vm.lastname" required />
+                            </div>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">Email: </label>
+                                <input type="email" class="form-control" placeholder="Please enter your email" ng-model="vm.email" required />
+                            </div>
+                        </div>                        
+                    </div>
+                    <div>
+                        <h4 class="text-left">Profile Information:</h4>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">Username: </label>
+                                <input type="text" class="form-control" placeholder="Please enter your username" ng-model="vm.username" required />
+                            </div>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">Password: </label>
+                                <input id="password" type="password" class="form-control" placeholder="Please enter your password" ng-model="vm.password" required />
+                            </div>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">Password: </label>
+                                <input id="passwordConfirmation" type="password" class="form-control" placeholder="Please re-enter password" ng-model="vm.passwordConfirmation" required />
+                                <i class="fa fa-exclamation-triangle" ng-show="vm.passwordInvalid==true" style="color:red"></i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="row" style="padding-top:20px">
+                    <div class="form-group">
+                        <button class="btn btn-success" ng-click="vm.signUp()" ng-disabled="signUpForm.$invalid">Create account</button>
+                        <button class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

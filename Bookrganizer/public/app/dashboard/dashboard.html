@@ -1,0 +1,134 @@
+﻿<section id="dashboard-view" class="mainbar" data-ng-controller="dashboard as vm">
+    <section class="matter">
+        <div data-ng-include="'/app/layout/topnav.html'"></div>
+        <div class="container">
+            <div class="row">
+                <button id="addItem" type="button" class="btn btn-primary btn-circle btn-lg" ng-click="vm.addItem()"><i class="glyphicon glyphicon-plus"></i></button>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="today-datas">
+                        <li class="bblue">
+                            <div class="pull-left"><i class="fa fa-calendar"></i></div>
+                            <div class="datas-text pull-right">
+                                <span class="bold">{{vm.today.getTime() |date: 'EEE MMM d, yyyy'}}</span>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+
+                        <li class="bblue" ng-click="vm.viewMessages()">
+                            <div class="pull-left"><i class="fa fa-envelope"></i></div>
+                            <!--<div class="datas-text pull-right">
+                                <span class="bold">View Messages</span>
+                            </div>-->
+                            <div class="clearfix"></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="widget wgreen">
+                        <div data-cc-widget-header title="Books"
+                             allow-collapse="true"></div>
+                        <div class="widget-content text-left text-info">
+                            <div style="max-height: 300px;overflow-y: auto;">
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Author</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="b in vm.books track by $index">
+                                            <td><a ng-click="vm.openBook($index)">{{b.title}}</a></td>
+                                            <td>{{b.author}}</td>
+                                            <td>{{b.rating}}</td>
+                                        </tr>
+                                        <tr ng-if="vm.books.length == 0">
+                                            <td colspan="3">No records to display.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="widget wviolet">
+                        <div data-cc-widget-header title="Movies"
+                             allow-collapse="true"></div>
+                        <div class="widget-content text-left text-info">
+                            <div style="max-height: 300px;overflow-y: auto;">
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Genre</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="m in vm.movies track by $index">
+                                            <td><a ng-click="vm.openMovie($index)">{{m.title}}</a></td>
+                                            <td>{{m.genre}}</td>
+                                            <td>{{m.rating}}</td>
+                                        </tr>
+                                        <tr ng-if="vm.movies.length == 0">
+                                            <td colspan="3">No records to display.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <div class="widget wlightblue">
+                        <div data-cc-widget-header title="Games"
+                             allow-collapse="true"></div>
+                        <div class="widget-content text-left text-info">
+                            <div style="max-height: 300px;overflow-y: auto;">
+                                <table class="table table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Platform</th>
+                                            <th>Rating</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr data-ng-repeat="g in vm.games track by $index">
+                                            <td><a ng-click="vm.openGame($index)">{{g.title}}</a></td>
+                                            <td>{{g.platform}}</td>
+                                            <td>{{g.rating}}</td>
+                                        </tr>
+                                        <tr ng-if="vm.games.length == 0">
+                                            <td colspan="3">No records to display.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="widget-foot">
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

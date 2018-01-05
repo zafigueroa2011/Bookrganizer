@@ -1,0 +1,25 @@
+﻿<section id="logout-view" class="mainbar matter" data-ng-controller="logout as vm">
+    <section class="matter">
+        <div class="container">
+            <div class="col-md-10 text-center">
+                <div class="row">
+                    <img src="././Content/images/book-icon.jpg" class="icon" style="float:left" />
+                    <h1>Bookrganizer</h1>
+                </div>
+
+            </div>
+            <div class="col-md-10" style="padding-top:30px">
+                <h2 class="text-center top-buffer bottom-buffer">Logout</h2>                
+                <div class="row top-buffer text-center">
+                    <div class="form-group">
+                        <h4>Are you sure you want to logout?</h4>
+                        <div style="padding-top:30px">
+                            <button class="btn btn-warning" ng-click="vm.logout()">Logout</button>
+                            <button class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

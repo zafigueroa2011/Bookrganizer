@@ -1,0 +1,14 @@
+{
+  "name": "bookrganizer",
+  "version": "0.0.0",
+  "description": "Bookrganizer",
+  "main": "server.js",
+  "author": {
+    "name": "zafig"
+  },
+  "dependencies": {
+    "body-parser": "1.17.1",
+    "express": "4.15.2",
+    "mongoose": "4.9.6"
+  }
+}

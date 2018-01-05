@@ -1,0 +1,254 @@
+﻿<section id="addItem-view" class="mainbar" data-ng-controller="addItem as vm">
+    <section class="matter">
+        <div data-ng-include="'/app/layout/topnav.html'"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Add Item</h2>
+                    <form name="signUpForm" class="form-inline">
+                        <div class="form-group bottom-buffer">
+                            <label class="text-left col-md-4">Select Type: </label>
+                            <label><input type="radio" name="type" value="Book" checked> Book</label>
+                            <label><input type="radio" name="type" value="Movie"> Movie</label>
+                            <label><input type="radio" name="type" value="Game"> Game</label>
+                        </div>
+                        <div class="row top-buffer">
+                            <div class="form-group">
+                                <label class="text-left col-md-2">Image: </label>
+                                <input type="file" id="imageFile" accept=".png,.jpeg,.jpg" ng-model="vm.image" ng-show="false"/>
+                                <img id="imagePreview" src="././Content/images/default-placeholder-300x300.png" alt="Please upload picture" width="80" height="80"/>
+                            </div>
+                        </div>
+                        <div ng-if="vm.type=='Book'">
+                            <h4 class="text-left">Book Information:</h4>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">ISBN: </label>
+                                    <input type="number" class="form-control" placeholder="Please enter ISBN" ng-model="vm.isbn" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Title: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter title" ng-model="vm.title" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Author: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter author" ng-model="vm.author" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Genre: </label>
+                                    <select style="width:200px" ng-model="vm.genre">
+                                        <option value="" style="display:none">Choose genre from list</option>
+                                        <option ng-repeat="g in vm.genres" value="{{g}}">{{g}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Language: </label>
+                                    <select style="width:200px" ng-model="vm.language">
+                                        <option value="" style="display:none">Choose language from list</option>
+                                        <option ng-repeat="l in vm.languages" value="{{l}}">{{l}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Year Published: </label>
+                                    <input type="number" class="form-control" placeholder="Please enter year published" maxlength="4" ng-model="vm.year" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Number of Pages: </label>
+                                    <input type="number" class="form-control" placeholder="Please enter # of pages" ng-model="vm.pages" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Location: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter location" ng-model="vm.location" />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Format Type: </label>
+                                    <select style="width:200px" ng-model="vm.format">
+                                        <option value="" style="display:none">Choose book format</option>
+                                        <option value="Hardback">Hardback</option>
+                                        <option value="Paperback">Paperback</option>
+                                        <option value="Textbook">Textbook</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Rating: </label>
+                                    <input type="range" class="form-control" min="1" max="5" ng-model="vm.rating" />
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="vm.type=='Movie'">
+                            <h4 class="text-left">Movie Information:</h4>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Title: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter title" ng-model="vm.title" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Actors: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter actors" ng-model="vm.actors" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Genre: </label>
+                                    <select style="width:200px" ng-model="vm.genre">
+                                        <option value="" style="display:none">Choose genre from list</option>
+                                        <option ng-repeat="g in vm.genres" value="{{g}}">{{g}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Rated: </label>
+                                    <select style="width:200px" ng-model="vm.rated">
+                                        <option value="" style="display:none">Choose film rating</option>
+                                        <option value="G">G</option>
+                                        <option value="PG">PG</option>
+                                        <option value="PG13">PG-13</option>
+                                        <option value="R">R</option>
+                                        <option value="NC17">NC-17</option>
+                                        <option value="NR">Not Rated</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Language: </label>
+                                    <select style="width:200px" ng-model="vm.language">
+                                        <option value="" style="display:none">Choose language from list</option>
+                                        <option ng-repeat="l in vm.languages" value="{{l}}">{{l}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Year: </label>
+                                    <input type="number" class="form-control" placeholder="Please enter year published" maxlength="4" ng-model="vm.year" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Format: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter the format" ng-model="vm.format" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Location: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter location" ng-model="vm.location" />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Rating: </label>
+                                    <input type="range" class="form-control" min="1" max="5" ng-model="vm.rating" />
+                                </div>
+                            </div>
+                        </div>
+                        <div ng-if="vm.type=='Game'">
+                            <h4 class="text-left">Game Information:</h4>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Title: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter title" ng-model="vm.title" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Platform: </label>
+                                    <select style="width:200px" ng-model="vm.platform">
+                                        <option value="" style="display:none">Choose Platform</option>
+                                        <option value="PS">PlayStation</option>
+                                        <option value="XBOX">XBOX</option>
+                                        <option value="Wii">Wii</option>
+                                        <option value="PC">PC</option>
+                                        <option value="Nintendo">Nitendo</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Genre: </label>
+                                    <select style="width:200px" ng-model="vm.genre">
+                                        <option value="" style="display:none">Choose genre from list</option>
+                                        <option ng-repeat="g in vm.genres" value="{{g}}">{{g}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Rated: </label>
+                                    <select style="width:200px" ng-model="vm.rated">
+                                        <option value="" style="display:none">Choose game rating</option>
+                                        <option value="EC">Early Childhood</option>
+                                        <option value="E">Everyone</option>
+                                        <option value="E10+">Everyone 10+</option>
+                                        <option value="T">Teen</option>
+                                        <option value="M">Mature</option>
+                                        <option value="RP">Rating Pending</option>
+                                        <option value="AO">Adults Only</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Modes: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter the game mode(s)" ng-model="vm.modes" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Year: </label>
+                                    <input type="number" class="form-control" placeholder="Please enter year published" maxlength="4" ng-model="vm.year" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Publishers: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter the publisher" ng-model="vm.publisher" required />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Location: </label>
+                                    <input type="text" class="form-control" placeholder="Please enter location" ng-model="vm.location" />
+                                </div>
+                            </div>
+                            <div class="row top-buffer">
+                                <div class="form-group">
+                                    <label class="text-left col-md-2">Rating: </label>
+                                    <input type="range" class="form-control" min="1" max="5" ng-model="vm.rating" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row text-center" style="padding-top:20px">
+                        <div class="form-group">
+                            <button class="btn btn-success" ng-click="vm.addItem()" ng-disabled="addItemForm.$invalid">Add Item</button>
+                            <button class="btn btn-primary" ng-click="vm.cancel()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
